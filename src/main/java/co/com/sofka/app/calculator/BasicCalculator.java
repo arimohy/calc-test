@@ -15,4 +15,17 @@ public class BasicCalculator {
         logger.info("Summing {} - {}", number1, number2 );
         return number1-number2;
     }
+    public Long multiplication(Long number1, Long number2) {
+        logger.info("Summing {} * {}", number1, number2 );
+        return number1*number2;
+    }
+    public Long division(Long number1, Long number2) {
+        try {
+            logger.info("Summing {} / {}", number1, number2);
+            return number1 / number2;
+        } catch (Exception e) {
+            System.out.println("No se puede hacer division entre 0");
+            return null;
+        }
+    }
 }

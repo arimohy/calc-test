@@ -68,4 +68,33 @@ public class BasicCalculatorTest {
                 () -> first + " - " + second + " should equal " + expectedResult);
     }
 
+
+    @Test
+    @DisplayName("Testing several multiplication")
+    @ParameterizedTest(name = "{0} x {1} = {2}")
+    @CsvSource({
+            "0,    1,   0",
+            "1,    2,   2",
+            "41,  -31, -1271",
+            "1,  100, 100"
+    })
+    public void severalMultiplication(Long first, Long second, Long expectedResult) {
+        assertEquals(expectedResult, basicCalculator.multiplication(first, second),
+                () -> first + " x " + second + " should equal " + expectedResult);
+    }
+
+    @Test
+    @DisplayName("Testing several division")
+    @ParameterizedTest(name = "{0} / {1} = {2}")
+    @CsvSource({
+            "0,    1,   0",
+            "1,    2,   0",
+            "41,  0, null",
+            "8,  4, 2"
+    })
+    public void severalDivision(Long first, Long second, Long expectedResult) {
+        assertEquals(expectedResult, basicCalculator.division(first, second),
+                () -> first + " / " + second + " should equal " + expectedResult);
+    }
+
 }
