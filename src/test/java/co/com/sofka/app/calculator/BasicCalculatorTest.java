@@ -40,7 +40,7 @@ public class BasicCalculatorTest {
         // Assert
         assertEquals(expectedValue, result);
     }
-    @Test
+
     @DisplayName("Testing several sums")
     @ParameterizedTest(name = "{0} + {1} = {2}")
     @CsvSource({
@@ -54,7 +54,7 @@ public class BasicCalculatorTest {
                 () -> first + " + " + second + " should equal " + expectedResult);
     }
 
-    @Test
+
     @DisplayName("Testing several subtractions")
     @ParameterizedTest(name = "{0} - {1} = {2}")
     @CsvSource({
@@ -69,7 +69,7 @@ public class BasicCalculatorTest {
     }
 
 
-    @Test
+
     @DisplayName("Testing several multiplication")
     @ParameterizedTest(name = "{0} x {1} = {2}")
     @CsvSource({
@@ -83,13 +83,13 @@ public class BasicCalculatorTest {
                 () -> first + " x " + second + " should equal " + expectedResult);
     }
 
-    @Test
+
     @DisplayName("Testing several division")
     @ParameterizedTest(name = "{0} / {1} = {2}")
     @CsvSource({
             "0,    1,   0",
             "1,    2,   0",
-            "41,  0, null",
+            "41,  41, 1",
             "8,  4, 2"
     })
     public void severalDivision(Long first, Long second, Long expectedResult) {
